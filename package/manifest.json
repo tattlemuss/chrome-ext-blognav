@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "Easy blog navigation",
+  "description": ".",
+  "version": "0.1",
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js": ["contentscript.js"]
+    }
+  ],
+  
+  "web_accessible_resources": [
+    "blognav.css"
+  ]
+}
