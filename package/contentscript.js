@@ -1,7 +1,7 @@
 // Use Immediately Invoked Function Expression to avoid namespace pollution
 (function(){
 
-    var add_link = function(div, text, href) {
+    var addLink = function(div, text, href) {
         var a = document.createElement('a');
         var linkText = document.createTextNode(text);
         a.appendChild(linkText); 
@@ -9,12 +9,12 @@
         div.appendChild(a)
     }
     
-    var add_pad = function(div) {
+    var addPadding = function(div) {
         var a = document.createTextNode(' ');
         div.appendChild(a)
     }
     
-    // <link rel="stylesheet" href="http://russelldavies.typepad.com/planning/styles.css?v=6" type="text/css" media="screen" />
+// e.g. <link rel="stylesheet" href="http://russelldavies.typepad.com/planning/styles.css?v=6" type="text/css" media="screen" />
     var add_css = function(href) {
         var a = document.createElement('link');
         a.rel = "stylesheet";
@@ -24,38 +24,50 @@
         document.head.appendChild(a)
     }
     
-    var foundLinks = new Array();
+    var foundLinks = {};
     
     // Search for "link-rel" elements in the header
     var headChildren = document.head.getElementsByTagName('link');
+    var foundAny = false;
     for (var i = 0; i < headChildren.length; ++i) {
         //code
         var child = headChildren[i];
-        if (child.rel == 'prev') {
-            foundLinks.push({text: "prev", href : child.href})
+        var reltag = child.rel.toLowerCase();
+        if (reltag == 'prev') {
+            foundLinks['prev'] = {text: "<<<", href: child.href};
+            foundAny = true
         }
-        if (child.rel == 'next') {
-            foundLinks.push({text: "next", href : child.href})
+        else if (reltag == 'next') {
+            foundLinks['next'] = {text: ">>>", href: child.href};
+            foundAny = true
         }
-        if (child.rel == 'start') {
-            foundLinks.push({text: "start", href : child.href})
+        else if (reltag == 'start') {
+            foundLinks['start'] = {text: "Start", href: child.href};
+            foundAny = true
+           
         }
     }
-    
-    if (foundLinks.length != 0) {
-        //code
+
+    // Only create our interface if we find any links    
+    if (foundAny) {
         var div = document.createElement('div');
         div.id = "blognav-custom-nav";
         
         document.body.appendChild(div);
-        
-        var l = foundLinks.length;
-        for (var i = 0; i < l; ++i)
-        {
-            var el = foundLinks[i];
-            add_link(div, el.text, el.href);
-            add_pad(div);        
-        }
+
+        // Run through links in the order we want
+        var keys=["start", "prev", "next"];
+        var first = true;
+        keys.forEach( function(s) { 
+            var el = foundLinks[s];
+            if (el) {
+                if (!first) {
+                    addPadding(div);
+                }
+                addLink(div, el.text, el.href);
+                first = false;
+            }
+        } )
         
         // Insert custom CSS
         add_css(chrome.runtime.getURL("blognav.css"));
