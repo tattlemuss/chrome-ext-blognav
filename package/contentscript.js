@@ -1,10 +1,10 @@
 // Use Immediately Invoked Function Expression to avoid namespace pollution
 (function(){
-
-    var addLink = function(div, text, href) {
+    var addLink = function(div, img_url, href) {
         var a = document.createElement('a');
-        var linkText = document.createTextNode(text);
-        a.appendChild(linkText); 
+        var img = document.createElement('img');
+        img.src = chrome.runtime.getURL(img_url);
+        a.appendChild(img); 
         a.href = href;
         div.appendChild(a)
     }
@@ -34,15 +34,15 @@
         var child = headChildren[i];
         var reltag = child.rel.toLowerCase();
         if (reltag == 'prev') {
-            foundLinks['prev'] = {text: "<<<", href: child.href};
+            foundLinks['prev'] = {img_url: "nav_left.png", href: child.href};
             foundAny = true
         }
         else if (reltag == 'next') {
-            foundLinks['next'] = {text: ">>>", href: child.href};
+            foundLinks['next'] = {img_url: "nav_right.png", href: child.href};
             foundAny = true
         }
         else if (reltag == 'start') {
-            foundLinks['start'] = {text: "Start", href: child.href};
+            foundLinks['start'] = {img_url: "nav_up.png", href: child.href};
             foundAny = true
            
         }
@@ -51,9 +51,13 @@
     // Only create our interface if we find any links    
     if (foundAny) {
         var div = document.createElement('div');
-        div.id = "blognav-custom-nav";
+        div.className = "blognav-custom-nav-fsdfjdsiofusdfsoooo blognav-custom-nav-fsdfjdsiofusdfsoooo-bl";
         
         document.body.appendChild(div);
+
+        var img = document.createElement('img');
+        img.src = chrome.runtime.getURL("icon.png");
+        div.appendChild(img); 
 
         // Run through links in the order we want
         var keys=["start", "prev", "next"];
@@ -64,7 +68,7 @@
                 if (!first) {
                     addPadding(div);
                 }
-                addLink(div, el.text, el.href);
+                addLink(div, el.img_url, el.href);
                 first = false;
             }
         } )

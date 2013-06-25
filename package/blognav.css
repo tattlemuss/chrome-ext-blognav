@@ -1,9 +1,28 @@
-#blognav-custom-nav
+.blognav-custom-nav-fsdfjdsiofusdfsoooo
 {
     background-color: #fff;
-    padding: 10px;
+    padding: 3px;
+    margin: 0px;
+    border: 2px solid;
+    line-height: 0px;
+}
+
+.blognav-custom-nav-fsdfjdsiofusdfsoooo-bl
+{
     position: fixed;
     left:3px;
     bottom:3px;
-    border: 3px solid;
+}
+
+.blognav-custom-nav-fsdfjdsiofusdfsoooo-tr
+{
+    position: fixed;
+    right:3px;
+    top:3px;
+}
+
+.blognav-custom-nav-fsdfjdsiofusdfsoooo a
+{
+    background-color: #fff;
+    border:0; margin:0; padding:0;
 }
