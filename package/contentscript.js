@@ -64,7 +64,7 @@
             var el = foundLinks[s];
             if (el) {
                 if (!first) {
-                    addPadding(div);
+                    //addPadding(div);
                 }
                 addLink(div, el.img_url, el.href);
                 first = false;
