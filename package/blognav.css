@@ -1,11 +1,13 @@
 .blognav-custom-nav-fsdfjdsiofusdfsoooo
 {
     background-color: #fff;
-    padding: 3px;
+    padding: 0px 3px 3px 3px;
     margin: 0px;
-    border: 2px solid;
-    line-height: 0px;
+    border: 1px solid;
+    line-height: 12px;
 }
+
+/* div positioning */
 
 .blognav-custom-nav-fsdfjdsiofusdfsoooo-bl
 {
@@ -21,8 +23,19 @@
     top:3px;
 }
 
+/* link styling */
+
 .blognav-custom-nav-fsdfjdsiofusdfsoooo a
 {
     background-color: #fff;
     border:0; margin:0; padding:0;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-decoration: none;
+    color:#c62;
+}
+
+.blognav-custom-nav-fsdfjdsiofusdfsoooo a:visited
+{
+    color:#820;
 }

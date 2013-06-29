@@ -1,10 +1,9 @@
 // Use Immediately Invoked Function Expression to avoid namespace pollution
 (function(){
-    var addLink = function(div, img_url, href) {
+    var addLink = function(div, text, href) {
         var a = document.createElement('a');
-        var img = document.createElement('img');
-        img.src = chrome.runtime.getURL(img_url);
-        a.appendChild(img); 
+        var tn = document.createTextNode(text);
+        a.appendChild(tn); 
         a.href = href;
         div.appendChild(a)
     }
@@ -14,7 +13,6 @@
         div.appendChild(a)
     }
     
-// e.g. <link rel="stylesheet" href="http://russelldavies.typepad.com/planning/styles.css?v=6" type="text/css" media="screen" />
     var add_css = function(href) {
         var a = document.createElement('link');
         a.rel = "stylesheet";
@@ -34,15 +32,15 @@
         var child = headChildren[i];
         var reltag = child.rel.toLowerCase();
         if (reltag == 'prev') {
-            foundLinks['prev'] = {img_url: "nav_left.png", href: child.href};
+            foundLinks['prev'] = {img_url: "<", href: child.href};
             foundAny = true
         }
         else if (reltag == 'next') {
-            foundLinks['next'] = {img_url: "nav_right.png", href: child.href};
+            foundLinks['next'] = {img_url: ">", href: child.href};
             foundAny = true
         }
         else if (reltag == 'start') {
-            foundLinks['start'] = {img_url: "nav_up.png", href: child.href};
+            foundLinks['start'] = {img_url: "up", href: child.href};
             foundAny = true
            
         }
@@ -55,9 +53,9 @@
         
         document.body.appendChild(div);
 
-        var img = document.createElement('img');
-        img.src = chrome.runtime.getURL("icon.png");
-        div.appendChild(img); 
+        //var img = document.createElement('img');
+        //img.src = chrome.runtime.getURL("icon.png");
+        //div.appendChild(img); 
 
         // Run through links in the order we want
         var keys=["start", "prev", "next"];
