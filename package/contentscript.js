@@ -9,11 +9,6 @@
         div.appendChild(a)
     }
     
-    var addPadding = function(div) {
-        var a = document.createTextNode(' ');
-        div.appendChild(a)
-    }
-    
     var add_css = function(href) {
         var a = document.createElement('link');
         a.rel = "stylesheet";
@@ -50,12 +45,16 @@
     // Only create our interface if we find any links    
     if (foundAny) {
         var div = document.createElement('div');
-        div.className = "blognav-custom-nav-fsdfjdsiofusdfsoooo blognav-custom-nav-fsdfjdsiofusdfsoooo-bl";
-        
+        div.className = "blognav-custom-nav-fsdfjdsiofusdfsoooo blognav-custom-nav-fsdfjdsiofusdfsoooo-bl";        
         document.body.appendChild(div);
+        
+        // Insert image
+        var img = document.createElement('img');
+        img.src = chrome.runtime.getURL("icon.png");
+        div.appendChild(img);
 
         // Run through links in the order we want
-        var keys=["start", "prev", "next"];
+        var keys=["prev", "start", "next"];
         var first = true;
         keys.forEach( function(s) { 
             var el = foundLinks[s];
@@ -63,12 +62,10 @@
                 addLink(div, el.img_url, el.alt, el.href);
                 first = false;
             }
-        } )
+        } ) // forEach
         
         // Insert custom CSS
         add_css(chrome.runtime.getURL("blognav.css"));
     }
 }
 )();
-
-

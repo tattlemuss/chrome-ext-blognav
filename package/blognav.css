@@ -7,7 +7,6 @@
 }
 
 /* div positioning */
-
 .blognav-custom-nav-fsdfjdsiofusdfsoooo-bl
 {
     position: fixed;
@@ -31,17 +30,22 @@
     display: block;
     float: left;
     width: 1em;
-
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 500;
     text-decoration: none;
     vertical-align:text-top;
     text-align: center;
+    line-height: 100%;
 }
 
 .blognav-custom-nav-fsdfjdsiofusdfsoooo a:hover
 {
     color:#fff;
     background-color: #777;
+}
+
+.blognav-custom-nav-fsdfjdsiofusdfsoooo img
+{
+    float: left;
 }
