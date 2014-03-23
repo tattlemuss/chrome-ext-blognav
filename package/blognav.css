@@ -1,10 +1,9 @@
 .blognav-custom-nav-fsdfjdsiofusdfsoooo
 {
     background-color: #fff;
-    padding: 3px 3px 3px 3px;
     margin: 0px;
-    border: 1px solid;
-    line-height: 24px;
+    padding: 0px;
+    border: 2px solid;
 }
 
 /* div positioning */
@@ -12,36 +11,37 @@
 .blognav-custom-nav-fsdfjdsiofusdfsoooo-bl
 {
     position: fixed;
-    left:3px;
-    bottom:3px;
+    left: 3px;
+    bottom: 23px;  /* higher since Chrome notifications go down there */
 }
 
 .blognav-custom-nav-fsdfjdsiofusdfsoooo-tr
 {
     position: fixed;
-    right:3px;
-    top:3px;
+    right: 3px;
+    top: 3px;
 }
-
-/* link styling */
 
 .blognav-custom-nav-fsdfjdsiofusdfsoooo a
 {
     background-color: #fff;
-    border:0; margin:0; padding:0;
-    font-family: Arial, sans-serif;
+    color: #777;
+    margin:0;
+    padding:2px;
+    display: block;
+    float: left;
+    width: 1em;
+
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 24px;
+    font-weight: 500;
     text-decoration: none;
-    color:#c62;
-    padding: 0px 3px 3px 3px;
+    vertical-align:text-top;
+    text-align: center;
 }
 
-.blognav-custom-nav-fsdfjdsiofusdfsoooo a:visited
-{
-    color:#820;
-}
 .blognav-custom-nav-fsdfjdsiofusdfsoooo a:hover
 {
     color:#fff;
-    background-color: #c62;
+    background-color: #777;
 }

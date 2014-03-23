@@ -40,7 +40,7 @@
             foundAny = true
         }
         else if (reltag == 'start') {
-            foundLinks['start'] = {img_url: "up", href: child.href};
+            foundLinks['start'] = {img_url: "^", href: child.href};
             foundAny = true
            
         }

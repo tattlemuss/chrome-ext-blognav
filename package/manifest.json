@@ -19,9 +19,6 @@
   
   "web_accessible_resources": [
     "blognav.css",
-    "icon.png",
-    "nav_up.png",
-    "nav_left.png",
-    "nav_right.png"
+    "icon.png"
   ]
 }
