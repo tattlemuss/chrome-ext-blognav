@@ -1,10 +1,11 @@
 // Use Immediately Invoked Function Expression to avoid namespace pollution
 (function(){
-    var addLink = function(div, text, href) {
+    var addLink = function(div, text, alt, href) {
         var a = document.createElement('a');
         var tn = document.createTextNode(text);
         a.appendChild(tn); 
         a.href = href;
+        a.title = alt;
         div.appendChild(a)
     }
     
@@ -32,15 +33,15 @@
         var child = headChildren[i];
         var reltag = child.rel.toLowerCase();
         if (reltag == 'prev') {
-            foundLinks['prev'] = {img_url: "<", href: child.href};
+            foundLinks['prev'] = {img_url: "<", alt:"prev", href: child.href};
             foundAny = true
         }
         else if (reltag == 'next') {
-            foundLinks['next'] = {img_url: ">", href: child.href};
+            foundLinks['next'] = {img_url: ">", alt:"next", href: child.href};
             foundAny = true
         }
         else if (reltag == 'start') {
-            foundLinks['start'] = {img_url: "^", href: child.href};
+            foundLinks['start'] = {img_url: "^", alt:"start", href: child.href};
             foundAny = true
            
         }
@@ -53,20 +54,13 @@
         
         document.body.appendChild(div);
 
-        //var img = document.createElement('img');
-        //img.src = chrome.runtime.getURL("icon.png");
-        //div.appendChild(img); 
-
         // Run through links in the order we want
         var keys=["start", "prev", "next"];
         var first = true;
         keys.forEach( function(s) { 
             var el = foundLinks[s];
             if (el) {
-                if (!first) {
-                    //addPadding(div);
-                }
-                addLink(div, el.img_url, el.href);
+                addLink(div, el.img_url, el.alt, el.href);
                 first = false;
             }
         } )
