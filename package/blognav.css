@@ -10,15 +10,15 @@
 .blognav-custom-nav-fsdfjdsiofusdfsoooo-bl
 {
     position: fixed;
-    left: 3px;
-    bottom: 23px;  /* higher since Chrome notifications go down there */
+    left: 30px;
+    bottom: 30px;  /* higher since Chrome notifications go down there */
 }
 
 .blognav-custom-nav-fsdfjdsiofusdfsoooo-tr
 {
     position: fixed;
-    right: 3px;
-    top: 3px;
+    right: 30px;
+    top: 30px;
 }
 
 .blognav-custom-nav-fsdfjdsiofusdfsoooo a

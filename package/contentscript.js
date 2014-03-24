@@ -45,8 +45,12 @@
     // Only create our interface if we find any links    
     if (foundAny) {
         var div = document.createElement('div');
-        div.className = "blognav-custom-nav-fsdfjdsiofusdfsoooo blognav-custom-nav-fsdfjdsiofusdfsoooo-bl";        
-        document.body.appendChild(div);
+        var divname_base = "blognav-custom-nav-fsdfjdsiofusdfsoooo blognav-custom-nav-fsdfjdsiofusdfsoooo-";        
+        chrome.storage.sync.get({
+            location: 'bl'
+        }, function(items) {
+            div.className = divname_base.concat(items.location);
+        });
         
         // Insert image
         var img = document.createElement('img');
@@ -65,6 +69,8 @@
         } ) // forEach
         
         // Insert custom CSS
+        document.body.appendChild(div);
+        
         add_css(chrome.runtime.getURL("blognav.css"));
     }
 }
