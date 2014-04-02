@@ -1,4 +1,4 @@
-.blognav-custom-nav-fsdfjdsiofusdfsoooo
+.blognav-custom-nav-hfgfaaegnboocofajgdfjdibdjaajbgl
 {
     background-color: #fff;
     margin: 0px;
@@ -7,23 +7,22 @@
 }
 
 /* div positioning */
-.blognav-custom-nav-fsdfjdsiofusdfsoooo-bl
+.blognav-custom-nav-hfgfaaegnboocofajgdfjdibdjaajbgl-bl
 {
     position: fixed;
     left: 30px;
     bottom: 30px;  /* higher since Chrome notifications go down there */
 }
 
-.blognav-custom-nav-fsdfjdsiofusdfsoooo-tr
+.blognav-custom-nav-hfgfaaegnboocofajgdfjdibdjaajbgl-tr
 {
     position: fixed;
     right: 30px;
     top: 30px;
 }
 
-.blognav-custom-nav-fsdfjdsiofusdfsoooo a
+.blognav-custom-nav-hfgfaaegnboocofajgdfjdibdjaajbgl a
 {
-    background-color: #fff;
     color: #777;
     margin:0;
     padding:2px;
@@ -34,18 +33,19 @@
     font-size: 18px;
     font-weight: 500;
     text-decoration: none;
-    vertical-align:text-top;
+    vertical-align: text-bottom;
     text-align: center;
     line-height: 100%;
 }
 
-.blognav-custom-nav-fsdfjdsiofusdfsoooo a:hover
+.blognav-custom-nav-hfgfaaegnboocofajgdfjdibdjaajbgl a:hover
 {
     color:#fff;
     background-color: #777;
 }
 
-.blognav-custom-nav-fsdfjdsiofusdfsoooo img
+.blognav-custom-nav-hfgfaaegnboocofajgdfjdibdjaajbgl img
 {
+    display: block;
     float: left;
 }

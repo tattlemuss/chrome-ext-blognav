@@ -45,7 +45,7 @@
     // Only create our interface if we find any links    
     if (foundAny) {
         var div = document.createElement('div');
-        var divname_base = "blognav-custom-nav-fsdfjdsiofusdfsoooo blognav-custom-nav-fsdfjdsiofusdfsoooo-";        
+        var divname_base = "blognav-custom-nav-hfgfaaegnboocofajgdfjdibdjaajbgl blognav-custom-nav-hfgfaaegnboocofajgdfjdibdjaajbgl-";        
         chrome.storage.sync.get({
             location: 'bl'
         }, function(items) {
@@ -55,6 +55,7 @@
         // Insert image
         var img = document.createElement('img');
         img.src = chrome.runtime.getURL("icon.png");
+        img.title = "blognav extension";
         div.appendChild(img);
 
         // Run through links in the order we want

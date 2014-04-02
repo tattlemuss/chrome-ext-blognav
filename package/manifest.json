@@ -2,13 +2,19 @@
   "manifest_version": 2,
 
   "name": "blognav",
-  "description": "A small panel allowing you to navigate blog posts in a simple and consistent fashion.",
-  "version": "1.0",
+  "short_name": "blognav",
+  "description": "A tiny panel allowing you to navigate blogs in a simple and consistent fashion.",
+  "version": "0.0.1",
   
   "browser_action":
   {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
+  },
+
+  "icons":
+  {
+    "48": "icon48.png"
   },
 
   "content_scripts":
