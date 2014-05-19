@@ -4,7 +4,7 @@
   "name": "blognav",
   "short_name": "blognav",
   "description": "A tiny panel allowing you to navigate blogs in a simple and consistent fashion.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   
   "browser_action":
   {
